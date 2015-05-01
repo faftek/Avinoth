@@ -1,8 +1,8 @@
 <?php
 $servername = "localhost";
-$dbusername = "njohnson";
-$dbpassword = "5a5a8usyv";
-$dbname = "zadmin_sample";
+$dbusername = "admin_default";
+$dbpassword = "H7z@x@h3!";
+$dbname = "admin_default";
 
 $lunchNum = $_POST['lunchNumber'];
 
