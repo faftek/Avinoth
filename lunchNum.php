@@ -22,7 +22,7 @@ else {
 }
 
 function id_exists($conn, $lunchNum) {
-    $result = mysqli_query($conn,"SELECT `id` FROM students WHERE `studentId` = '$lunchNum'");
+    $result = mysqli_query($conn,"SELECT `id` FROM students WHERE `id` = '$lunchNum'");
     if(mysqli_num_rows($result) == 1) {
         return true;
     }
