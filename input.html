@@ -26,7 +26,10 @@
 			return;	
 		}	
 		$.post("lunchNum.php", {lunchNumber: lunchNumber}, function(result){
-			alert("HI");
+			if(result.indexOf("found") != -1) {
+	   			alert("found it!")
+			}
+			alert(result);
 		}
 	}
 	</script>
