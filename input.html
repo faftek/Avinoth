@@ -25,12 +25,14 @@
 			alert("PUT IN A DAMN LUNCH NUMBER");
 			return;	
 		}
+
 		$.post("lunchNum.php", {lunchNumber: lunchNumber}, function(result){
 			if(result.indexOf("found") != -1) {
-	   			alert("found it!")
+	   			alert("found it!");
 			}
 			alert(result);
-		}
+		});
+	}
 	</script>
 	<title>Lunch input form</title>
 </head>
