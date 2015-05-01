@@ -14,7 +14,7 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-if(id_exists($conn, $username)) {
+if(id_exists($conn, $lunchNum)) {
         echo "found";
 }
 else {
