@@ -249,7 +249,7 @@ function login() {
     $.post("login.php", {username: username, password: password}, function(result){
 	if(result.indexOf("logged in") != -1) {
 	    $.cookie("username", username);
-	    window.location.replace("http://www.notchuptek.com/test/index.html");
+	    print(result);
 	}   
 	else if(result.indexOf("login failed") != -1) {
 	    alert("cannot log you in!");   

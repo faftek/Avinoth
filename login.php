@@ -18,7 +18,9 @@ if (!$conn) {
 if(user_exists($conn, $username)) {
     if(password_iscorrect($conn, $username, $password)) {
 	session_start();
-        echo "logged in";
+        echo '<br />
+		here is this important data that\'s loading here since you logged in :D
+	';
     }
 }
 else {
