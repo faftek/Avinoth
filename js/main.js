@@ -307,3 +307,18 @@ function register() {
 	}
     });
 }
+
+	function checkNum() {
+		var lunchNumber = $("#lunchNumber").val();
+		if(lunchNumber.length == 0) {
+			alert("PUT IN A DAMN NUMBER");
+			return;	
+		}
+		
+		$.post("lunchNum.php", {lunchNumber: lunchNumber}, function(result){
+			if(result.indexOf("found") != -1) {
+	   			alert("found it!");
+			}
+			alert(result);
+		});
+	}

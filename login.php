@@ -27,29 +27,6 @@ if(user_exists($conn, $username)) {
 			<input type="button" value="Submit" onClick="checkNum()">
 		</form>
 	</center>
-	<script>
-	if(document.cookie.indexOf("username") >= 0) {
-		var loggedin = true;
-	}
-	else {
-			alert("FORWARD TO LOGIN PAGE");
-	}
-
-	function checkNum() {
-		var lunchNumber = $("#lunchNumber").val();
-		if(lunchNumber.length == 0) {
-			alert("PUT IN A DAMN NUMBER");
-			return;	
-		}
-		
-		$.post("lunchNum.php", {lunchNumber: lunchNumber}, function(result){
-			if(result.indexOf("found") != -1) {
-	   			alert("found it!");
-			}
-			alert(result);
-		});
-	}
-	</script>
 	';
     }
 }
