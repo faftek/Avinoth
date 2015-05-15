@@ -231,6 +231,7 @@ jQuery.fn.putCursorAtEnd = function() {
 };
 
 function login() {
+    var $form_modal = $('.cd-user-modal');
     var error = false;
     var username = $("#signin-email").val();
     var password = $("#signin-password").val();
@@ -262,6 +263,7 @@ function login() {
 }
 
 function register() {
+    var $form_modal = $('.cd-user-modal');
     var error;
     var username = $("#signup-username").val();
     var email = $("#signup-email").val();
