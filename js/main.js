@@ -249,7 +249,8 @@ function login() {
     $.post("login.php", {username: username, password: password}, function(result){
 	if(result.indexOf("logged in") != -1) {
 	    $.cookie("username", username);
-		document.getElementById("result").innerHTML = result;
+	    document.getElementById("result").innerHTML = result;
+	    $form_modal.removeClass('is-visible');
 	}   
 	else if(result.indexOf("login failed") != -1) {
 	    alert("cannot log you in!");   
@@ -294,6 +295,7 @@ function register() {
     $.post("register.php", {first: first, last: last, email: email, username: username, password: password}, function(result){
 	if(result.indexOf("success") != -1) {
 	    alert("Successfully registered!");
+	    $form_modal.removeClass('is-visible');
 	}   
 	else if(result.indexOf("username") != -1) {
 	    alert("username is taken!");   
