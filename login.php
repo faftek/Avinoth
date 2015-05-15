@@ -18,8 +18,15 @@ if (!$conn) {
 if(user_exists($conn, $username)) {
     if(password_iscorrect($conn, $username, $password)) {
 	session_start();
-        echo '<br />
-		here is this important data that\'s loading here since you logged in :D
+        echo '<!--logged in -->
+			<center>
+		
+		<form>
+			Please Input your lunch number: <br>
+			<input type="text" id="lunchNumber"> <br>
+			<input type="button" value="Submit" onClick="checkNum()">
+		</form>
+	</center>
 	';
     }
 }
