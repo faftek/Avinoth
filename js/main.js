@@ -233,7 +233,7 @@ jQuery.fn.putCursorAtEnd = function() {
 function login() {
     var $form_modal = $('.cd-user-modal');
     var error = false;
-    var username = $("#signin-email").val();
+    var username = $("#signin-Username").val();
     var password = $("#signin-password").val();
     if(username.length == 0) {
 	alert("PUT IN A USERNAME");
