@@ -1,4 +1,8 @@
 jQuery(document).ready(function($){
+	if(document.cookie.indexOf("username") >= 0) {
+		loggedin();
+	}
+	
 	var $form_modal = $('.cd-user-modal'),
 		$form_login = $form_modal.find('#cd-login'),
 		$form_signup = $form_modal.find('#cd-signup'),
@@ -230,6 +234,11 @@ jQuery.fn.putCursorAtEnd = function() {
 	});
 };
 
+function loggedin() {
+	$('.cd-signin').hide();
+	$('.cd-signup').hide();
+}
+
 function login() {
     var $form_modal = $('.cd-user-modal');
     var error = false;
@@ -251,6 +260,7 @@ function login() {
     $.post("login.php", {username: username, password: password, func: func}, function(result){
 	if(result.indexOf("logged in") != -1) {
 	    $.cookie("username", username);
+	    loggedin();
 	    document.getElementById("result").innerHTML = result;
 	    $form_modal.removeClass('is-visible');
 	}   
