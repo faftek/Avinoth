@@ -1,12 +1,10 @@
 <?php
 $servername = "localhost";
-$dbusername = "admin_default";
+$dbname = "admin_spa";
+$dbusername = "admin_nathan";
 $dbpassword = "H7z@x@h3!";
-$dbname = "admin_default";
 
-$username = $_POST['username'];
-$password = $_POST['password'];
-
+$func = $_POST['func'];
 // Create connection
 $conn = mysqli_connect($servername, $dbusername, $dbpassword, $dbname);
 
@@ -14,7 +12,29 @@ $conn = mysqli_connect($servername, $dbusername, $dbpassword, $dbname);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
+//check which function to run *******MOVE TO SWTICH CASE LATER******
+if($func == "login") {
+$username = $_POST['username'];
+$password = $_POST['password'];
+login($conn, $username, $password);
+}
 
+if($func == "register") {
+$username = $_POST['username'];
+$password = $_POST['password'];
+$email = $_POST['email'];
+$first = $_POST['first'];
+$last = $_POST['last'];
+register($conn, $username, $password, $email, $first, $last);
+}
+
+if($func == "lunchNum") {
+	$lunchNum = $_POST['lunchNumber'];
+	lunchID_exists($conn, $lunchNum);
+}
+
+//main functions to run
+function login($conn, $username, $password) {
 if(user_exists($conn, $username)) {
     if(password_iscorrect($conn, $username, $password)) {
 	session_start();
@@ -33,9 +53,31 @@ if(user_exists($conn, $username)) {
 else {
     echo "nop";
 }
+}
 
+function register($conn, $username, $password, $email, $first, $last) {
+if(!user_exists($conn, $username)) {
+    $salt = uniqid(mt_rand(), true);
+    $hashed = hash("sha256", $password . $salt);
+    mysqli_query($conn, "INSERT INTO `users`(`first_name`, `last_name`, `username`, `password`, `salt`, `email`, `active`, `admin`) VALUES ('$first','$last','$username','$hashed','$salt','$email',1,0)");
+    echo "success";
+}
+else {
+    echo "username";
+}
+}
 
+function lunchID_exists($conn, $lunchNum) {
+    $result = mysqli_query($conn,"SELECT `id` FROM students WHERE `id` = '$lunchNum'");
+    if(mysqli_num_rows($result) == 1) {
+        echo "found";
+    }
+    else {
+        echo "nop";
+    }
+}
 
+//SUBFUNCTIONS
 function user_exists($conn, $username) {
     $result = mysqli_query($conn,"SELECT `username` FROM users WHERE `username` = '$username'");
     if(mysqli_num_rows($result) == 1) {

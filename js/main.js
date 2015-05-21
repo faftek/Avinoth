@@ -233,6 +233,7 @@ jQuery.fn.putCursorAtEnd = function() {
 function login() {
     var $form_modal = $('.cd-user-modal');
     var error = false;
+    var func = "login";
     var username = $("#signin-Username").val();
     var password = $("#signin-password").val();
     if(username.length == 0) {
@@ -247,7 +248,7 @@ function login() {
 	return;
     }
     
-    $.post("login.php", {username: username, password: password}, function(result){
+    $.post("login.php", {username: username, password: password, func: func}, function(result){
 	if(result.indexOf("logged in") != -1) {
 	    $.cookie("username", username);
 	    document.getElementById("result").innerHTML = result;
@@ -265,6 +266,7 @@ function login() {
 function register() {
     var $form_modal = $('.cd-user-modal');
     var error;
+    var func = "register";
     var username = $("#signup-username").val();
     var email = $("#signup-email").val();
     var password = $("#signup-password").val();
@@ -294,7 +296,7 @@ function register() {
 	return;
     }
 
-    $.post("register.php", {first: first, last: last, email: email, username: username, password: password}, function(result){
+    $.post("login.php", {first: first, last: last, email: email, username: username, password: password, func: func}, function(result){
 	if(result.indexOf("success") != -1) {
 	    alert("Successfully registered!");
 	    $form_modal.removeClass('is-visible');
@@ -309,13 +311,14 @@ function register() {
 }
 
 	function checkNum() {
+		var func = "lunchNum";
 		var lunchNumber = $("#lunchNumber").val();
 		if(lunchNumber.length == 0) {
 			alert("PUT IN A DAMN NUMBER");
 			return;	
 		}
 		
-		$.post("lunchNum.php", {lunchNumber: lunchNumber}, function(result){
+		$.post("login.php", {lunchNumber: lunchNumber, func: func}, function(result){
 			if(result.indexOf("found") != -1) {
 	   			alert("found it!");
 			}
