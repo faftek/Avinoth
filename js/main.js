@@ -26,14 +26,14 @@ jQuery(document).ready(function($){
 	$("#menuButton").click(function(){
 		if(menuState == "open")
 		{
-			var switchUrl = "/img/glyphicons/517.png";
+			var switchUrl = "/Avinoth/img/glyphicons/517.png";
 			$("#sidebar").css("width", "0px");
 			$("#content").css("width", "calc(100% - 0px)");
 			menuState = "closed";
 		}
 		else
 		{
-			var switchUrl = "/img/glyphicons/211.png";
+			var switchUrl = "/Avinoth/img/glyphicons/211.png";
 			$("#sidebar").css("width", "300px");
 			$("#content").css("width", "calc(100% - 300px)");
 			menuState = "open";
@@ -138,51 +138,13 @@ jQuery(document).ready(function($){
 		$form_forgot_password.addClass('is-selected');
 	}
 
-	//REMOVE THIS - it's just to show error messages 
-	$form_login.find('input[type="submit"]').on('click', function(event){
-		event.preventDefault();
-		$form_login.find('input[type="email"]').toggleClass('has-error').next('span').toggleClass('is-visible');
-	});
-	$form_signup.find('input[type="submit"]').on('click', function(event){
-		event.preventDefault();
-		$form_signup.find('input[type="email"]').toggleClass('has-error').next('span').toggleClass('is-visible');
-	});
-
-
-	//IE9 placeholder fallback
-	//credits http://www.hagenburger.net/BLOG/HTML5-Input-Placeholder-Fix-With-jQuery.html
-	if(!Modernizr.input.placeholder){
-		$('[placeholder]').focus(function() {
-			var input = $(this);
-			if (input.val() == input.attr('placeholder')) {
-				input.val('');
-		  	}
-		}).blur(function() {
-		 	var input = $(this);
-		  	if (input.val() == '' || input.val() == input.attr('placeholder')) {
-				input.val(input.attr('placeholder'));
-		  	}
-		}).blur();
-		$('[placeholder]').parents('form').submit(function() {
-		  	$(this).find('[placeholder]').each(function() {
-				var input = $(this);
-				if (input.val() == input.attr('placeholder')) {
-			 		input.val('');
-				}
-		  	})
-		});
-	}
-
 });
 
-
-//credits http://css-tricks.com/snippets/jquery/move-cursor-to-end-of-textarea-or-input/
 jQuery.fn.putCursorAtEnd = function() {
 	return this.each(function() {
     	// If this function exists...
     	if (this.setSelectionRange) {
       		// ... then use it (Doesn't work in IE)
-      		// Double the length because Opera is inconsistent about whether a carriage return is one character or two. Sigh.
       		var len = $(this).val().length * 2;
       		this.setSelectionRange(len, len);
     	} else {
@@ -200,7 +162,8 @@ function loggedin() {
 	$('#sidebar').show();
 	$('#menuButton').show();
 	$.post("content.php",{func: "loggedIn"} , function(result){
-	document.getElementById("content").innerHTML = result;
+	var obj = JSON.parse(result);
+	document.getElementById("content").innerHTML = obj.html;
 	});
 	
 }

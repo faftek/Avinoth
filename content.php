@@ -2,8 +2,8 @@
 include 'pages.php';
 //DB CONNECT INFO. seriously move dis shit in the future to somewhere else.
 $servername = getenv('IP');
-$dbname = "SPA";
-$dbusername = "thefaftek";
+$dbname = "avinoth_SPA";
+$dbusername = "avinoth_spa";
 $dbpassword = "H7z@x@h3!";
 
 $func = $_POST['func'];

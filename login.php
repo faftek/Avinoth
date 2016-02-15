@@ -1,7 +1,7 @@
 <?php
-$servername = "localhost";
-$dbname = "admin_spa";
-$dbusername = "admin_nathan";
+$servername = getenv('IP');
+$dbname = "avinoth_SPA";
+$dbusername = "avinoth_spa";
 $dbpassword = "H7z@x@h3!";
 
 $func = $_POST['func'];

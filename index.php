@@ -1,3 +1,5 @@
+<?php	session_start();  ?>
+
 <!doctype html>
 
 <html lang="en" class="no-js">
@@ -9,14 +11,10 @@
 
 	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
 	<link rel="stylesheet" href="css/style.css"> <!-- Gem style -->
-	<script src="js/modernizr.js"></script> <!-- Modernizr -->
   	<script src="js/jquery-2.1.4.js"></script>
     <script src="js/jquery.cookie.js"></script>
 	<script src="js/main.js"></script> <!-- Gem jQuery -->
-	<?php
-	//gotta start that session
-	session_start();
-	?>
+
 	<title>Log In &amp; Sign Up Form</title>
 </head>
 <body>
@@ -24,7 +22,7 @@
 	<div id="statusDiv" style="display: none;"><div id="statusDivContent">Loading...</div></div>
 	<header role="banner"> <!-- side banner -->
 		<span id="menuButton">
-			<img id="menuImage" class="inverted" src="/img/glyphicons/211.png" style="display: inline;">
+			<img id="menuImage" class="inverted" src="/Avinoth/img/glyphicons/211.png" style="display: inline;">
 		</span>
 		
 		<nav class="main-nav">
@@ -132,12 +130,12 @@
 		</div> <!-- cd-user-modal-container -->
 	</div> <!-- cd-user-modal -->
 	<div id="sidebar" style="width: 300px;">
-		<div class="sidebarNav" data-location="home" style="color: rgb(52, 73, 94); background-color: rgb(236, 240, 241);"><img src="" class="">Home</div>
-		<div class="sidebarNav" data-location="application" style="color: rgb(255, 255, 255); background-color: rgb(52, 73, 94);"><img class="inverted" src="">Application</div>
-		<div class="sidebarNav" data-location="setting" style="color: rgb(255, 255, 255); background-color: rgb(52, 73, 94);"><img class="inverted" src="">Settings</div>
-		<div class="sidebarNav" data-location="info" style="color: rgb(255, 255, 255); background-color: rgb(52, 73, 94);"><img class="inverted" src="">More info</div>
+		<div class="sidebarNav" data-location="home" style="color: rgb(52, 73, 94); background-color: rgb(236, 240, 241);"><img src="" class=""><a href="#home">Home</a></div>
+		<div class="sidebarNav" data-location="application" style="color: rgb(255, 255, 255); background-color: rgb(52, 73, 94);"><img class="inverted" src=""><a href="#App">Application</a></div>
+		<div class="sidebarNav" data-location="setting" style="color: rgb(255, 255, 255); background-color: rgb(52, 73, 94);"><img class="inverted" src=""><a href="#Settings">Settings</a></div>
+		<div class="sidebarNav" data-location="info" style="color: rgb(255, 255, 255); background-color: rgb(52, 73, 94);"><img class="inverted" src=""><a href="#info">More info</a></div>
 	</div>
-	<div id="content" style="width: calc(100% - 300px);">Thank you for using the ABS Bench application. This section is currently in progress, and will be done at some point in the future. Please just select application for now!</div>
+	<div id="content" style="width: calc(100% - 300px);">HI123</div>
 </body>
 
 </html>

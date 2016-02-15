@@ -2,7 +2,7 @@
 	function applicationHome() {
 		$html = '
 			<center>
-				Thank you for using the ABS Bench application. This section is currently in progress, and will be done at some point in the future. Please just select application for now!
+				Home
 			</center>
 		';
 		$arr = array('html' => $html, 'status' => 0);
@@ -12,11 +12,7 @@
     function application() {
         $html = '
 			<center>
-		        <form>
-			        Please Input your ticket number: <br>
-		        	<input type="text" id="TicketNumber"> <br>
-			        <input type="button" value="Submit" onClick="checkNum()">
-	        	</form>
+		        Well this is awkward
 	        </center>
 	    ';
 	    $arr = array('html' => $html, 'status' => 0);
@@ -26,7 +22,7 @@
     function settings() {
     	$html = '
 			<center>
-				Thank you for using the ABS Bench application. This section is currently in progress, and will be done at some point in the future. Please just select application for now!
+				Settings!
 			</center>
 		';
 		$arr = array('html' => $html, 'status' => 0);
@@ -36,7 +32,7 @@
     function about() {
     	$html = '
 			<center>
-				Thank you for using the ABS Bench application. This section is currently in progress, and will be done at some point in the future. Please just select application for now!
+				ABOUT!
 			</center>
 		';
 		$arr = array('html' => $html, 'status' => 0);
