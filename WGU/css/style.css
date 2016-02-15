@@ -1,0 +1,143 @@
+/* -------------------------------- 
+
+Primary style
+
+-------------------------------- */
+html * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+*
+{
+	-webkit-transition: width 1s, height 1s, padding 1s; 
+	-moz-transition: width 1s, height 1s, padding 1s; 
+	-ms-transition: width 1s, height 1s, padding 1s; 
+	-o-transition: width 1s, height 1s, padding 1s; 
+	transition: width 1s, height 1s, padding 1s; 
+	box-sizing:border-box;
+}
+html,body{
+	height:100%;
+}
+
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 100%;
+  font-family: "PT Sans", sans-serif;
+  background-color: rgb(236, 240, 241);
+}
+
+a {
+  color: #2f889a;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+input, textarea {
+  font-family: "PT Sans", sans-serif;
+  font-size: 16px;
+  font-size: 1rem;
+}
+/* Nathan Added */
+#statusDiv
+{
+	position:fixed;
+	left:0px;
+	right:0px;
+	bottom:0px;
+	top:0px;
+	background-color:rgba(41,129,185, 0.2);
+	z-index:5001;
+}
+#statusDivContent
+{
+	width:80px;
+	padding:15px;
+	margin:0 auto;
+	margin-top:20%;
+}
+#sidebar
+{
+	background-color:#34495e;
+	color:white;
+	z-index: 0;
+	height:calc(100% - 75px);
+	width:300px;
+	float:left;
+	text-wrap:none;
+	white-space:nowrap;
+	overflow:hidden;
+
+	
+}
+.sidebarNav
+{
+	width:100%;
+	float:left;
+	font-size:1.2em;
+	height:50px;
+	vertical-align:middle;
+	padding:10px;
+	padding-right:15px;
+	cursor:pointer;
+}
+.sidebarNav > img
+{
+	margin-left:5px;margin-right:5px;
+	position:relative;
+	top:6px;
+	
+}
+#menuImage
+{
+	margin-left:5px;
+    
+    position:relative;
+    top:3px;
+}
+#menuButton
+{
+	position: absolute;
+	padding:4px;
+	width:35px;
+	display:inline-block;
+	overflow:hidden;
+	cursor:pointer;
+	vertical-align:middle;
+	top: 25px;
+	left:20px;
+	-webkit-transition: width 0s; 
+	-moz-transition: width 0s; 
+	-ms-transition: width 0s; 
+	-o-transition: width 0s; 
+	transition: width 0s; 
+	
+}
+#content
+{
+	background-color:#ecf0f1;
+	height:calc(100% - 75px);
+	float:left;
+	padding:15px;
+	z-index: 0;
+	width:calc(100% - 300px);
+	
+}
+.inverted
+{
+	-webkit-filter: invert(100%);
+    -moz-filter: invert(100%);
+    -o-filter: invert(100%);
+    -ms-filter: invert(100%); 
+    filter: invert(100%);
+    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'invert\'><feColorMatrix in=\'SourceGraphic\' type=\'matrix\' values=\'-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 0 0 0 1 0\'/></filter></svg>#invert");
+
+}
