@@ -4,7 +4,7 @@ include 'pages.php';
 $servername = getenv('IP');
 $dbname = "avinoth_SPA";
 $dbusername = "avinoth_spa";
-$dbpassword = "H7z@x@h3!";
+$dbpassword = "nop!";
 
 $func = $_POST['func'];
 // Create connection
